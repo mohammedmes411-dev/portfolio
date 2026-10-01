@@ -1,56 +1,91 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  FaJava, FaPython, FaJs, FaReact, FaAngular, FaDocker, FaGitAlt, FaDatabase, FaHtml5, FaCss3Alt,
+  FaJava, FaPython, FaJs, FaReact, FaDocker, FaGitAlt, FaDatabase, FaHtml5, FaCss3Alt, FaServer, FaCode, FaRobot, FaTools, FaProjectDiagram, FaLock, FaFileAlt
 } from 'react-icons/fa';
 import {
-  SiSpringboot, SiDotnet, SiTailwindcss, SiMysql, SiMongodb, SiPostgresql, SiTypescript, SiFlutter,
+  SiSpringboot, SiDotnet, SiTailwindcss, SiMysql, SiMongodb, SiPostgresql, SiBootstrap, SiGithub, SiPostman, SiJira, SiFigma, SiPhp, SiCplusplus
 } from 'react-icons/si';
 
 const categories = [
   {
     title: 'Langages',
     skills: [
-      { name: 'Java', icon: <FaJava />, level: 90 },
-      { name: 'Python', icon: <FaPython />, level: 85 },
-      { name: 'JavaScript', icon: <FaJs />, level: 88 },
-      { name: 'TypeScript', icon: <SiTypescript />, level: 80 },
-      { name: 'C', level: 75 },
+      { name: 'Java', icon: <FaJava /> },
+      { name: 'JavaScript', icon: <FaJs /> },
+      { name: 'Python', icon: <FaPython /> },
+      { name: 'SQL', icon: <FaDatabase /> },
+      { name: 'C++', icon: <SiCplusplus /> },
+      { name: 'PHP', icon: <SiPhp /> },
     ],
   },
   {
     title: 'Backend',
     skills: [
-      { name: 'Spring Boot', icon: <SiSpringboot />, level: 85 },
-      { name: 'ASP.NET', icon: <SiDotnet />, level: 80 },
-      { name: 'Django', level: 70 },
+      { name: 'Spring Boot', icon: <SiSpringboot /> },
+      { name: 'ASP.NET Core', icon: <SiDotnet /> },
     ],
   },
   {
     title: 'Frontend',
     skills: [
-      { name: 'React', icon: <FaReact />, level: 90 },
-      { name: 'Angular', icon: <FaAngular />, level: 75 },
-      { name: 'HTML5', icon: <FaHtml5 />, level: 95 },
-      { name: 'CSS3', icon: <FaCss3Alt />, level: 90 },
-      { name: 'Tailwind', icon: <SiTailwindcss />, level: 85 },
-      { name: 'Flutter', icon: <SiFlutter />, level: 65 },
+      { name: 'HTML5', icon: <FaHtml5 /> },
+      { name: 'CSS3', icon: <FaCss3Alt /> },
+      { name: 'React.js', icon: <FaReact /> },
+      { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
+      { name: 'Bootstrap', icon: <SiBootstrap /> },
     ],
   },
   {
-    title: 'Bases de Données',
+    title: 'Bases de données',
     skills: [
-      { name: 'MySQL', icon: <SiMysql />, level: 85 },
-      { name: 'MongoDB', icon: <SiMongodb />, level: 80 },
-      { name: 'PostgreSQL', icon: <SiPostgresql />, level: 75 },
-      { name: 'SQL Server', icon: <FaDatabase />, level: 78 },
+      { name: 'PostgreSQL', icon: <SiPostgresql /> },
+      { name: 'MySQL', icon: <SiMysql /> },
+      { name: 'SQL Server', icon: <FaDatabase /> },
+      { name: 'MongoDB', icon: <SiMongodb /> },
     ],
   },
   {
-    title: 'Outils & DevOps',
+    title: 'API & Sécurité',
     skills: [
-      { name: 'Git', icon: <FaGitAlt />, level: 90 },
-      { name: 'Docker', icon: <FaDocker />, level: 75 },
+      { name: 'API REST', icon: <FaServer /> },
+      { name: 'JSON', icon: <FaFileAlt /> },
+      { name: 'JWT', icon: <FaLock /> },
+      { name: 'Postman', icon: <SiPostman /> },
+    ],
+  },
+  {
+    title: 'DevOps',
+    skills: [
+      { name: 'Docker', icon: <FaDocker /> },
+      { name: 'Git', icon: <FaGitAlt /> },
+      { name: 'GitHub', icon: <SiGithub /> },
+      { name: 'Ansible', icon: <FaTools /> },
+    ],
+  },
+  {
+    title: 'Intelligence Artificielle',
+    skills: [
+      { name: 'Machine Learning (bases)', icon: <FaRobot /> },
+      { name: 'Automatisation (n8n)', icon: <FaRobot /> },
+    ],
+  },
+  {
+    title: 'Architecture',
+    skills: [
+      { name: 'Microservices', icon: <FaProjectDiagram /> },
+      { name: 'MVC', icon: <FaCode /> },
+      { name: 'Clean Code', icon: <FaCode /> },
+    ],
+  },
+  {
+    title: 'Méthodologies & Outils',
+    skills: [
+      { name: 'Agile/Scrum', icon: <FaTools /> },
+      { name: 'Jira', icon: <SiJira /> },
+      { name: 'VS Code', icon: <FaCode /> },
+      { name: 'Figma', icon: <SiFigma /> },
+      { name: 'Documentation', icon: <FaFileAlt /> },
     ],
   },
 ];
@@ -82,25 +117,14 @@ const Skills = () => {
               className="bg-dark border border-dark-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-300"
             >
               <h3 className="text-lg font-bold text-primary mb-5">{cat.title}</h3>
-              <div className="space-y-4">
-                {cat.skills.map((skill, i) => (
-                  <div key={skill.name}>
-                    <div className="flex items-center justify-between mb-1.5">
-                      <div className="flex items-center gap-2 text-light text-sm font-medium">
-                        {skill.icon && <span className="text-primary text-lg">{skill.icon}</span>}
-                        {skill.name}
-                      </div>
-                      <span className="text-muted text-xs">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-dark-border rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.3 + i * 0.1, ease: 'easeOut' }}
-                      />
-                    </div>
+              <div className="flex flex-wrap gap-3">
+                {cat.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-2 px-3 py-2 bg-dark-border/30 rounded-lg border border-dark-border/50 hover:border-primary/50 transition-colors"
+                  >
+                    {skill.icon && <span className="text-primary">{skill.icon}</span>}
+                    <span className="text-light text-sm font-medium">{skill.name}</span>
                   </div>
                 ))}
               </div>

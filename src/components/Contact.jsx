@@ -25,7 +25,9 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6 rounded-full" />
           <p className="text-muted text-center max-w-lg mx-auto mb-14">
-            N'hésitez pas à me contacter pour toute opportunité de stage, collaboration ou simplement pour échanger !
+            N'hésitez pas à me contacter pour toute opportunité de stage.
+            <br />
+            Merci beaucoup
           </p>
         </motion.div>
 
