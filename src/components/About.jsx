@@ -5,7 +5,7 @@ import { FaCode, FaBrain, FaLightbulb } from 'react-icons/fa';
 const highlights = [
   { icon: <FaCode size={24} />, title: 'Full-Stack', desc: 'Maîtrise du développement web ' },
   { icon: <FaBrain size={24} />, title: 'Intelligence Artificielle', desc: 'Passionné par  Machine Learning ' },
-  { icon: <FaLightbulb size={24} />, title: 'Résolution de problèmes', desc: 'Approche analytique et orientée résultats' },
+  
 ];
 
 const About = () => {
