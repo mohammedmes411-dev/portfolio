@@ -50,7 +50,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              &lt; BIENVENUE SUR MON PORTFOLIO /&gt;
+             
             </motion.p>
 
             <motion.h1
